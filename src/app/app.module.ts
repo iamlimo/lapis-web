@@ -11,13 +11,17 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './pages/examples.module';
+import { AdminComponent } from './layouts/admin/admin.component';
+import { UserComponent } from './layouts/user/user.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

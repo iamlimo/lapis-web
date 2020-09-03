@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import { DOCUMENT } from '@angular/common';
@@ -15,8 +15,22 @@ export class AppComponent implements OnInit {
     private _router: Subscription;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
 
-    constructor( private renderer : Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
+    constructor( private renderer : Renderer2, 
+        private router: Router, @Inject(DOCUMENT,) 
+        private document: any, 
+        private element : ElementRef,
+         public location: Location, 
+         private route: ActivatedRoute) {}
     ngOnInit() {
+        let url = document.location.href;
+        if (url === 'http://localhost:4200/#/admin/dashboard') {
+            document.getElementById("show").style.display="none";
+        } else if(url === 'http://localhost:4200/#/user') {
+            document.getElementById("show").style.display="none";
+        } else {
+            document.getElementById("show").style.display="block";
+        }
+        console.log(this.router.url);
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
             if (window.outerWidth > 991) {

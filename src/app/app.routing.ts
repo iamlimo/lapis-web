@@ -16,6 +16,8 @@ import { PartnerComponent } from './pages/partner/partner.component';
 import { EventComponent } from './pages/event/event.component';
 import { TestimoniesComponent } from './pages/testimonies/testimonies.component';
 import { SermonComponent } from './pages/sermon/sermon.component';
+import { AdminComponent } from './layouts/admin/admin.component';
+import { UserComponent } from './layouts/user/user.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -30,7 +32,27 @@ const routes: Routes =[
     { path: 'partner',          component: PartnerComponent },
     { path: 'events',      component: EventComponent },
     { path: 'testimonies',      component: TestimoniesComponent },
-    { path: 'sermon',      component: SermonComponent }
+    { path: 'sermon',      component: SermonComponent },
+    {
+      path: 'admin',
+      component: AdminComponent,
+      children: [ 
+        {
+          path: '',
+          loadChildren: '../app/admin/admin/admin.module#AdminModule'
+        }
+      ]
+    },
+    {
+      path: 'user',
+      component: UserComponent,
+      children: [ 
+        {
+          path: '',
+          loadChildren: '../app/user/user/user/user.module#UserModule'
+        }
+      ]
+    },
 ];
 
 @NgModule({
