@@ -2,7 +2,7 @@
 
 /*             Navigation Tabs                 */
 .nav-tabs-navigation{
-    text-align: center;
+    // text-align: center;
     border-bottom: 1px solid $medium-pale-bg;
 
 
@@ -13,8 +13,8 @@
 .nav-tabs-wrapper{
     display: inline-block;
     margin-bottom: -6px;
-    margin-left: 1.25%;
-    margin-right: 1.25%;
+    // margin-left: 1.25%;
+    // margin-right: 1.25%;
     position: relative;
     width: 100%;
 }
@@ -23,17 +23,22 @@
         font-weight: $font-weight-bold;
         border-bottom: 1px solid #F1EAE0;
         margin-bottom: 30px;
+        padding-top: 20px;
+        background-color: #3E72B8;
+        
         .nav-item{
             .nav-link{
                 border: 0 none;
                 color: $other-medium-gray;
                 background-color: transparent;
+                color: #FFFFFF;
             }
             .nav-link:hover{
                 color: $font-color;
             }
             .nav-link.active{
-                color: $font-color;
+                // color: $font-color;
+                color: #FFFFFF;
             }
         }
 

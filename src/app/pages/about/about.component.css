@@ -1,0 +1,40 @@
+#about-preview{
+    background-color: #ffffff;
+    height: 550px;
+    /* width: 800px; */
+    padding: 50px;
+    
+}
+
+#about-us{ 
+    padding-top: 70px;
+    margin-top: 70px;
+    background: url(assets/img/about.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;  
+    background-position: center;  
+    /* filter: grayscale(100%); */
+    height: 700px;
+    background-attachment: fixed;
+}
+
+.iconz{
+    width: 50px;
+    border-radius: 50%;
+    background-color: red;
+    padding: 10px;
+}
+
+.icons-header{
+    color: #3E72B8;
+}
+
+#liner{
+    background-color: #3E72B8;
+    height: 70px;
+}
+
+ul > li{
+    font-size: 16px !important;
+    font-family: 'Rubik', sans-serif;
+}
