@@ -39,7 +39,7 @@
             color: #9A9A9A !important;
             text-transform: uppercase;
             font-weight: 600;
-            font-size: 12px;
+            font-size: 16px;
             line-height: 1.5em;
             padding: 15px 0;
         }
@@ -53,10 +53,10 @@
             margin: $navbar-margin-a;
             padding: $navbar-padding-a;
             opacity: .8;
-            font-size: $font-size-small;
+            font-size: 14px;
             text-transform: uppercase;
-            font-weight: 600;
-            color: $default-color;
+            font-weight: 400;
+            color: #222;
          }
         .nav-item .nav-link.btn{
             margin: $navbar-margin-a-btn;

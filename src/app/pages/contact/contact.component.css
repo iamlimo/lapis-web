@@ -17,6 +17,10 @@
     height: 700px;
     background-attachment: fixed;
 }
+button{
+    background-color: #3e72b8;
+    border-color: #3e72b8;
+}
 
 p{
     color: #ffffff !important;
@@ -33,6 +37,6 @@ p{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 750px;
     border-radius: 12px;
 }
