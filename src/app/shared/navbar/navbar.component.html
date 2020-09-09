@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top" color-on-scroll="500">
   <div class="container-fluid">
       <div class="navbar-translate">
-          <a class="navbar-brand" href="https://www.creative-tim.com"><img src="./assets/img/lapis-lazuli.png" width="120" alt=""></a>
+          <a class="navbar-brand"><img src="./assets/img/lapis-lazuli.png" width="120" ></a>
           <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
               <span class="navbar-toggler-bar"></span>
               <span class="navbar-toggler-bar"></span>
@@ -45,7 +45,7 @@
               <a routerLink="/login"  class="btn btn-primary btn-round">Login</a>
             </li>
             <li class="nav-item" *ngIf="isLoggedIn">
-                <a routerLink="/"  class="btn btn-primary btn-round">Logout</a>
+                <a (click)="logout()"  class="btn btn-primary btn-round">Logout</a>
               </li>
           </ul>
       </div>

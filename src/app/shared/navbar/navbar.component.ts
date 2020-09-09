@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { AuthService } from 'app/providers/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -13,7 +14,7 @@ export class NavbarComponent implements OnInit {
     private sidebarVisible: boolean;
     userInfo: any;
 
-    constructor(public location: Location, private element : ElementRef, private _authService: AuthService) {
+    constructor(public location: Location, private element : ElementRef,private _router: Router, private _authService: AuthService) {
         this.sidebarVisible = false;
     }
 
@@ -83,4 +84,10 @@ export class NavbarComponent implements OnInit {
             this.userInfo = userinfo['data'];
    });
     }
+    
+  logout(){
+    this._authService.deleteToken();
+    window.location.reload();
+    this._router.navigateByUrl('/');  
+  }
 }

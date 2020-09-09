@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'app/providers/auth.service';
 import { authModel } from 'app/models/model';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -38,13 +39,19 @@ export class LoginComponent implements OnInit {
   constructor( 
               private formBuilder: FormBuilder,
               private _router: Router,
-              private _authService: AuthService
+              private _authService: AuthService,
+              private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit() {
 
   }
- 
+  showSpinner() {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
+  }
   loginUser(form: authModel) {
     console.log(form);
     this._authService.login(form)
