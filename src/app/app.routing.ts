@@ -18,12 +18,15 @@ import { TestimoniesComponent } from './pages/testimonies/testimonies.component'
 import { SermonComponent } from './pages/sermon/sermon.component';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { UserComponent } from './layouts/user/user.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes =[
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
     { path: 'home',             component: ComponentsComponent },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
+    { path: 'login',           component: LoginComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'about',          component: AboutComponent },
     { path: 'founders',          component: FoundersComponent },
@@ -35,6 +38,7 @@ const routes: Routes =[
     { path: 'sermon',      component: SermonComponent },
     {
       path: 'admin',
+      canActivate: [AuthGuard],
       component: AdminComponent,
       children: [ 
         {
@@ -45,6 +49,7 @@ const routes: Routes =[
     },
     {
       path: 'user',
+      canActivate: [AuthGuard],
       component: UserComponent,
       children: [ 
         {

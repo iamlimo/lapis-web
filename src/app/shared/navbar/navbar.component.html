@@ -10,40 +10,42 @@
       </div>
       <div class="navbar-collapse" id="navbarToggler">
           <ul class="navbar-nav ml-auto">
-              <li class="nav-item" *ngIf="!isDocumentation()">
-                  <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="/" target="_blank">
-                    HOME
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="/#/about">
-                     ABOUT US
-                  </a>
-              </li>
-              <li class="nav-item" *ngIf="!isDocumentation()">
-                  <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                     EVENTS
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://lapislmradio.org/" target="_blank">
-                      LAPIS LM RADIO
-                  </a>
-              </li>
-              <li class="nav-item" *ngIf="!isDocumentation()">
-                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="/#/contact" target="_blank">
-                    CONTACT US
+            <li class="nav-item" >
+                <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" routerLink="/" >
+                  HOME
                 </a>
             </li>
-              <li class="nav-item" *ngIf="isHome()">
-                  <a href="https://www.creative-tim.com/product/paper-kit-2-pro-angular?ref=pk2-angular-free-local" target="_blank" class="btn btn-danger btn-round">Upgrade to Pro</a>
-              </li>
-              <li class="nav-item" *ngIf="!isHome()">
-                  <a [routerLink]="['/home']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
-                  <a [routerLink]="['/home']" *ngIf="isDocumentation()" class="nav-link">Back to Kit</a>
-              </li>
-              <li class="nav-item" *ngIf="isDocumentation()">
-                  <a href="https://github.com/creativetimofficial/paper-kit-2-angular/issues?ref=pk2-free-local" target="_blank" class="nav-link">Have an issue</a>
+            <li class="nav-item" >
+                <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" routerLink="/about" >
+                   ABOUT US
+                </a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" routerLink="/events" >
+                   EVENTS
+                </a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://lapislmradio.org/" >
+                    LAPIS LM RADIO
+                </a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" routerLink="/contact" >
+                  CONTACT US
+              </a>
+          </li>
+            <li class="nav-item" *ngIf="!isHome()">
+                <a routerLink="/donate"  class="btn btn-danger btn-round">Donate</a>
+            </li>
+            <li class="nav-item" *ngIf="!isLoggedIn">
+              <a routerLink="/signup"  class="btn btn-primary btn-round">Register</a>
+            </li>
+            <li class="nav-item" *ngIf="!isLoggedIn">
+              <a routerLink="/login"  class="btn btn-primary btn-round">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn">
+                <a routerLink="/"  class="btn btn-primary btn-round">Logout</a>
               </li>
           </ul>
       </div>

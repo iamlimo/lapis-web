@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { AuthService } from 'app/providers/auth.service';
 
 @Component({
     selector: 'app-navbar',
@@ -8,15 +9,18 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 })
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
+    isLoggedIn = false;
     private sidebarVisible: boolean;
+    userInfo: any;
 
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(public location: Location, private element : ElementRef, private _authService: AuthService) {
         this.sidebarVisible = false;
     }
 
     ngOnInit() {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+        this.getInfo();
     }
     sidebarOpen() {
         const toggleButton = this.toggleButton;
@@ -70,5 +74,13 @@ export class NavbarComponent implements OnInit {
         else {
             return false;
         }
+    }
+    // Function to get the info for a login user!
+    getInfo() {
+        this._authService.getUserInfo().subscribe(userinfo => { 
+            // tslint:disable-next-line: max-line-length 
+            this.isLoggedIn = true;             
+            this.userInfo = userinfo['data'];
+   });
     }
 }

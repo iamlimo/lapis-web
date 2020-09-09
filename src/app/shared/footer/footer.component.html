@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-md-3">
                     <h5>RESOURCES</h5>
-                    <ul>
+                    <ul style="text-decoration-style: none;">
                         <li>eNewsletter</li>
                         <li>Blog</li>
-                        <li>Contact Us</li>
+                        <li><a routerLink="/contact"> Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -19,15 +19,15 @@
                 </div>
                 <div class="col-md-3">
                     <ul>
-                        <li>Lapis LM Radio</li>
-                        <li>Women Minsitry</li>
-                        <li>Founders</li>
+                        <li> <a href="https://lapislmradio.org/">   Lapis LM Radio</a></li>
+                        <li><a href=""> Women Minsitry</a></li>
+                       <li> <a routerLink="/founders">Founders</a> </li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h5>Subscribe to our newsletter.</h5>
-                    <input type="text" name="" id=""> <br>
-                    <button>Subscribe</button>
+                    <input type="text" name="" id="" placeholder="example@gmail.com" class="form-control"> <br>
+                    <button class="btn btn-danger btn-round">Subscribe</button>
                 </div>
             </div>
         </div>
@@ -35,16 +35,10 @@
     <div class="container">
 
         <div class="row">
-            <!-- <nav class="footer-nav">
-                <ul>
-                    <li><a href="https://www.creative-tim.com">Creative Tim</a></li>
-                    <li><a href="http://blog.creative-tim.com">Blog</a></li>
-                    <li><a href="https://www.creative-tim.com/license">Licenses</a></li>
-                </ul>
-            </nav> -->
             <div class="col-md-12">
                 <p class="text-center">
-                    © {{test | date: 'yyyy'}}, made with <i class="fa fa-heart heart"></i> LAPIS LAZULI MINISTRIES
+                    © {{test | date: 'yyyy'}} <i class="fa fa-heart heart"></i>
+                    <small> <b> LAPIS LAZULI MINISTRIES </b></small>
                 </p>
             </div>
             

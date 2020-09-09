@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -15,13 +15,16 @@ import { DonationComponent } from './donation/donation.component';
 import { EventComponent } from './event/event.component';
 import { TestimoniesComponent } from './testimonies/testimonies.component';
 import { SermonComponent } from './sermon/sermon.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         NgbModule,
     ],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     declarations: [
         LandingComponent,
         SignupComponent,
@@ -33,7 +36,8 @@ import { SermonComponent } from './sermon/sermon.component';
         DonationComponent,
         EventComponent,
         TestimoniesComponent,
-        SermonComponent
+        SermonComponent,
+        LoginComponent
     ]
 })
 export class ExamplesModule { }
