@@ -5,7 +5,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { LandingComponent } from './landing/landing.component';
-import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { FoundersComponent } from './founders/founders.component';
 import { ContactComponent } from './contact/contact.component';
@@ -28,7 +27,6 @@ import { LoginComponent } from './login/login.component';
     declarations: [
         LandingComponent,
         SignupComponent,
-        ProfileComponent,
         FoundersComponent,
         ContactComponent,
         PartnerComponent,

@@ -13,15 +13,18 @@ export class NavbarComponent implements OnInit {
     isLoggedIn = false;
     private sidebarVisible: boolean;
     userInfo: any;
-
-    constructor(public location: Location, private element : ElementRef,private _router: Router, private _authService: AuthService) {
+    interval: any;
+    constructor(public location: Location, private element : ElementRef,
+        private _router: Router, private _authService: AuthService) {
         this.sidebarVisible = false;
     }
 
     ngOnInit() {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
-        this.getInfo();
+        this.interval = setInterval(() => { 
+            this.getInfo();
+        }, 1000);
     }
     sidebarOpen() {
         const toggleButton = this.toggleButton;

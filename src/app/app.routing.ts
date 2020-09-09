@@ -4,7 +4,6 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components/components.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
@@ -24,7 +23,6 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes =[
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
     { path: 'home',             component: ComponentsComponent },
-    { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
     { path: 'login',           component: LoginComponent },
     { path: 'landing',          component: LandingComponent },
@@ -54,7 +52,7 @@ const routes: Routes =[
       children: [ 
         {
           path: '',
-          loadChildren: '../app/user/user/user/user.module#UserModule'
+          loadChildren: '../app/user/user.module#UserModule'
         }
       ]
     },
