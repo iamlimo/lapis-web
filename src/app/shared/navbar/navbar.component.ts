@@ -22,9 +22,9 @@ export class NavbarComponent implements OnInit {
     ngOnInit() {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
-        this.interval = setInterval(() => { 
+        // this.interval = setInterval(() => { 
             this.getInfo();
-        }, 1000);
+        // }, 1000);
     }
     sidebarOpen() {
         const toggleButton = this.toggleButton;
@@ -88,9 +88,9 @@ export class NavbarComponent implements OnInit {
    });
     }
     
-  logout(){
+  logout() {
     this._authService.deleteToken();
     window.location.reload();
-    this._router.navigateByUrl('/');  
+    this._router.navigateByUrl('/landing');  
   }
 }

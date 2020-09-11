@@ -19,6 +19,7 @@ import { AdminComponent } from './layouts/admin/admin.component';
 import { UserComponent } from './layouts/user/user.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { NgbdModalComponent } from './components/modal/modal.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes =[
     { path: 'events',      component: EventComponent },
     { path: 'testimonies',      component: TestimoniesComponent },
     { path: 'sermon',      component: SermonComponent },
+    {path: 'modal', component: NgbdModalComponent },
     {
       path: 'admin',
       canActivate: [AuthGuard],

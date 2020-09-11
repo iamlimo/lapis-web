@@ -1,1 +1,35 @@
-<p>event-list works!</p>
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/fabio-mangione.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="container">
+        <button class="btn btn-outline-danger btn-round float-right" (click)="open()">Launch demo modal</button>
+       <div class="row">
+          <div class="col-md-6">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3" >
+                        <div class="card" id="card1" *ngFor="let item of events" [style.background-image]="'url('+ item.banner+')'" style="width: 15rem; height: 15rem;" >
+                            <div class="layer" >
+                            </div>
+                            <div class="card-body">
+                                <i class="fa fa-heart"></i>
+                            <h5 class="card-titles">{{item?.title}}</h5>
+                            
+                            <p class="card-text-hide">{{item?.description}}</p>
+                            <button class="btn btn btn-outline-danger btn-round card-button" (click)="view(item)">view</button>   
+                            </div>
+                        </div>
+                    </div>
+             </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <event-detail [eventInfo]="eventInfo"></event-detail>
+        </div>
+       </div>
+    </div>
+
+
+</div>
+

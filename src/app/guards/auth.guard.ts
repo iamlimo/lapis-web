@@ -17,11 +17,10 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot){
       if (!this._authService.isLoggedIn()) {
-        this.router.navigateByUrl('welcome');
+        this.router.navigateByUrl('landing');
         this._authService.deleteToken();
         return false
       }
     return true;
   }
-  
 }

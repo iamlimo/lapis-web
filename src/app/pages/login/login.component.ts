@@ -46,20 +46,26 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
   }
-  showSpinner() {
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 3000);
-  }
+  // showSpinner() {
+  //   this.spinner.show();
+  //   setTimeout(() => {
+  //     this.spinner.hide();
+  //   }, 3000);
+  // }
   loginUser(form: authModel) {
     console.log(form);
     this._authService.login(form)
     .subscribe(data => {
              this._authService.setToken(data['data']); 
              this._authService.getUserInfo().subscribe(userinfo => { 
-               // tslint:disable-next-line: max-line-length              
-                this._router.navigate(['/user']);
+               console.log(userinfo);
+               // tslint:disable-next-line: max-line-length
+                if( userinfo['data'].role === "user" ) {
+                  this._router.navigate(['/user']);
+                } else  if ( userinfo['data'].role === "admin") {
+                  this._router.navigate(['/admin']);
+                }             
+               
       });
     },
     // tslint:disable-next-line:no-shadowed-variable

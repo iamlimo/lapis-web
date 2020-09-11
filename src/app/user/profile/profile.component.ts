@@ -16,6 +16,7 @@ export class ProfileComponent implements OnInit {
         this._authService.getUserInfo().subscribe(userinfo => { 
             // tslint:disable-next-line: max-line-length           
             this.userInfo = userinfo['data'];
+            console.log(this.userInfo);
     });
     }
 
