@@ -22,15 +22,6 @@ export class AppComponent implements OnInit {
          public location: Location, 
          private route: ActivatedRoute) {}
     ngOnInit() {
-        let url = document.location.href;
-        if (url === 'http://localhost:4200/#/admin/dashboard') {
-            document.getElementById("show").style.display="none";
-        } else if(url === 'http://localhost:4200/#/user') {
-            document.getElementById("show").style.display="none";
-        } else {
-            document.getElementById("show").style.display="block";
-        }
-        console.log(this.router.url);
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
             if (window.outerWidth > 991) {

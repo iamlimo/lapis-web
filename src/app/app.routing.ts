@@ -4,7 +4,6 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components/components.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
@@ -18,12 +17,15 @@ import { TestimoniesComponent } from './pages/testimonies/testimonies.component'
 import { SermonComponent } from './pages/sermon/sermon.component';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { UserComponent } from './layouts/user/user.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NgbdModalComponent } from './components/modal/modal.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
     { path: 'home',             component: ComponentsComponent },
-    { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
+    { path: 'login',           component: LoginComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'about',          component: AboutComponent },
     { path: 'founders',          component: FoundersComponent },
@@ -33,8 +35,10 @@ const routes: Routes =[
     { path: 'events',      component: EventComponent },
     { path: 'testimonies',      component: TestimoniesComponent },
     { path: 'sermon',      component: SermonComponent },
+    {path: 'modal', component: NgbdModalComponent },
     {
       path: 'admin',
+      canActivate: [AuthGuard],
       component: AdminComponent,
       children: [ 
         {
@@ -45,11 +49,12 @@ const routes: Routes =[
     },
     {
       path: 'user',
+      canActivate: [AuthGuard],
       component: UserComponent,
       children: [ 
         {
           path: '',
-          loadChildren: '../app/user/user/user/user.module#UserModule'
+          loadChildren: '../app/user/user.module#UserModule'
         }
       ]
     },

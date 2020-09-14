@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
@@ -13,8 +14,13 @@ import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './pages/examples.module';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { UserComponent } from './layouts/user/user.component';
+import { AuthService } from './providers/auth.service';
 
-
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { HttpClientModule } from '@angular/common/http';
+import { EventService } from './providers/event.service';
+import { NotificationService } from './providers/notification.service';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +33,18 @@ import { UserComponent } from './layouts/user/user.component';
     BrowserModule,
     NgbModule,
     FormsModule,
+    BrowserAnimationsModule,
     RouterModule,
     ComponentsModule,
     ExamplesModule,
+    HttpClientModule,
     AppRoutingModule,
+    NgxSpinnerModule,
+    ToastrModule.forRoot()
+
   ],
-  providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [AuthService, EventService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
