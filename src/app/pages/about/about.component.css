@@ -1,14 +1,14 @@
 #about-preview{
     background-color: #ffffff;
-    height: 550px;
+    /* height: 550px; */
     /* width: 800px; */
     padding: 50px;
     
 }
 
 #about-us{ 
-    padding-top: 70px;
-    margin-top: 70px;
+    padding-top: 10em;
+    /* margin-top: 70px; */
     background: url(assets/img/about.jpg);
     background-repeat: no-repeat; 
     background-size: cover;  
@@ -37,4 +37,11 @@
 ul > li{
     font-size: 16px !important;
     font-family: 'Rubik', sans-serif;
+}
+
+@media (max-width: 767px){
+    #about-us{
+        height: 100% !important; 
+    }
+    
 }
