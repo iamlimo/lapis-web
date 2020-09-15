@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h5 class="modal-title text-center">Upload Teachings</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="teachingForm" >
+        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+          <textarea name="" id="" cols="10" rows="10" formControlName="title" placeholder="Teachings Title" (focus)="focus=true" (blur)="focus=false" class="form-control"></textarea>
+        </div>
+        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+            <input type="text" class="form-control"  formControlName="link"  (focus)="focus=true" (blur)="focus=false" placeholder="www.youtube.com" >
+          </div>
+    </form>
+</div>
+<div class="modal-footer">
+   <div class="divider"></div>
+    <div class="right-side">
+        <button  class="btn btn-outline-danger btn-round"  (click)="createTeaching()">Save</button>
+    </div>
+</div>

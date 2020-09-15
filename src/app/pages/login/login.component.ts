@@ -62,8 +62,15 @@ export class LoginComponent implements OnInit {
                // tslint:disable-next-line: max-line-length
                 if( userinfo['data'].role === "user" ) {
                   this._router.navigate(['/user']);
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 1000)
+                
                 } else  if ( userinfo['data'].role === "admin") {
                   this._router.navigate(['/admin']);
+                  setTimeout(() => {
+                    window.location.reload();
+                  }, 1000)
                 }             
                
       });

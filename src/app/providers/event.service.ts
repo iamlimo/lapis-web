@@ -53,4 +53,41 @@ export class EventService {
       })
     });
   } 
+  getTeachings() {
+    return this._http.get(`${url}/teachings`,  {
+      observe: 'body',    
+      headers:  new HttpHeaders({
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this._authService.getToken()
+      })
+    });
+  }
+  postTeachings(body: any) {
+    return this._http.post(`${url}/teachings`, body, {
+      observe: 'body',    
+      headers:  new HttpHeaders({
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this._authService.getToken()
+      })
+    });
+  }
+  getBooks() {
+    return this._http.get(`${url}/books`,  {
+      observe: 'body',    
+      headers:  new HttpHeaders({
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this._authService.getToken()
+      })
+    });
+  }
+  getBookById(slug: any) {
+    return this._http.get(`${url}/book/${slug}`,  {
+      observe: 'body',    
+      headers:  new HttpHeaders({
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this._authService.getToken()
+      })
+    });
+  }
+
 }

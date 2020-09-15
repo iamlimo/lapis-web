@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h5 class="modal-title text-center">Event Creation</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="resourceForm"  >
+      <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+              <input type="text" class="form-control" formControlName="title" placeholder="Enter Event Title"  (focus)="focus=true" (blur)="focus=false" >
+      </div>
+      <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+            <input type="file" class="form-control"  (change)="onFileChange($event)" id="image"  (focus)="focus=true" (blur)="focus=false" >
+      </div>
+      <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+        <input type="text" class="form-control" formControlName="summary" placeholder="Short Description About Event"   (focus)="focus=true" (blur)="focus=false" >
+      </div>
+        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+          <textarea name="" id="" cols="20" rows="10" formControlName="description" (focus)="focus=true" (blur)="focus=false" class="form-control"></textarea>
+        </div>
+        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+            <input type="text" class="form-control"  formControlName="year"  (focus)="focus=true" (blur)="focus=false" placeholder="Enter Resource Year" >
+          </div>
+          <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+            <input type="text" class="form-control"  formControlName="author"  (focus)="focus=true" (blur)="focus=false" placeholder="Enter Author Name" >
+          </div>
+    </form>
+</div>
+<div class="modal-footer">
+   <div class="divider"></div>
+    <div class="right-side">
+        <button type="submit" class="btn btn-outline-danger btn-round" (click)="create()" >Save</button>
+    </div>
+</div>

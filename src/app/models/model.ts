@@ -6,3 +6,14 @@ export interface authModel {
     password: string;
     password_confirmation: string;
 }
+
+
+export interface userType {
+    member: 'user';
+    admin: 'admin';
+}
+
+export interface teachingsModel {
+    title: string;
+    link: string;
+}

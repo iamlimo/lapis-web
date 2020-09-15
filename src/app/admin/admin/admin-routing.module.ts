@@ -7,6 +7,7 @@ import { TestimoniesComponent } from './testimonies/testimonies/testimonies.comp
 import { MessageComponent } from './message/message/message.component';
 import { UserComponent } from './users/user/user.component';
 import { ResourceComponent } from './resources/resource/resource.component';
+import { TeachingComponent } from './teachings/teaching/teaching.component';
 
 
 const routes: Routes = [
@@ -16,10 +17,11 @@ const routes: Routes = [
   {path: 'event', component: EventListComponent},
   {path: 'prayer', component:  PrayersComponent},
   {path: 'testimony', component:   TestimoniesComponent},
-  {path: 'users', component:   TestimoniesComponent},
+  // {path: 'users', component:   TestimoniesComponent},
   {path: 'message', component: MessageComponent},
   {path: 'user', component: UserComponent},
-  {path: 'resources', component: ResourceComponent}
+  {path: 'resources', component: ResourceComponent},
+  {path: 'teaching', component: TeachingComponent}
 ];
 
 @NgModule({
