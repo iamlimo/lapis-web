@@ -11,14 +11,22 @@
       <div class="navbar-collapse" id="navbarToggler">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item" >
-                <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" routerLink="/" >
+                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" routerLink="/" >
                   HOME
                 </a>
             </li>
             <li class="nav-item" >
-                <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" routerLink="/about" >
-                   ABOUT US
-                </a>
+                <!-- <a class="nav-link" rel="tooltip" title="" data-placement="bottom" routerLink="/about" >
+                </a> -->
+                <div ngbDropdown class="dropdown" placement="bottom-left">
+                    <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>About Us</a>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-danger dropdown-menu-right">
+                        <a class="dropdown-item" href="/#/about">About us</a>
+                        <a class="dropdown-item" href="/#/about">Mission, Vision and Aim</a>
+                        <a class="dropdown-item" href="/#/founders">Founders</a>
+                        
+                    </div>
+                </div>
             </li>
             <li class="nav-item" >
                 <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" routerLink="/events" >
@@ -36,7 +44,7 @@
               </a>
           </li>
             <li class="nav-item" *ngIf="!isHome()">
-                <a routerLink="/donate"  class="btn btn-danger btn-round">Donate</a>
+                <a routerLink="/donate"  class="btn btn-round" id="donate">Donate</a>
             </li>
             <li class="nav-item" *ngIf="!isLoggedIn">
               <a routerLink="/signup"  class="btn btn-primary btn-round">Register</a>

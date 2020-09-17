@@ -1,0 +1,39 @@
+#founders{ 
+    padding-top: 10em;
+    /* margin-top: 70px; */
+    background: url(assets/img/lapis.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;  
+    background-position: center;  
+    /* filter: grayscale(100%); */
+    height: 700px;
+    background-attachment: fixed;
+}
+
+#bl{
+    background-color: #222222 !important;
+    opacity: 2;
+    color: #ffffff;
+
+}
+
+.fa{
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.fa-facebook{
+ color: #3b5998 !important;
+}
+
+.fa-twitter{
+    color: #00acee !important;
+}
+
+.fa-instagram{
+    color: #F56040 !important;
+}
+
+.fa-youtube{
+    color: #FF0000 !important;
+}
