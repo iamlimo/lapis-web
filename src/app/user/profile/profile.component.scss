@@ -1,0 +1,27 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+   
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    width: 250px;
+    height: 150px;
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 35px;
+  }
+
+  p{
+    color: #000;
+  }
+
+  .help-box {
+     cursor: pointer;
+  }
+
+.help-icons{
+    width: 30px;
+  }

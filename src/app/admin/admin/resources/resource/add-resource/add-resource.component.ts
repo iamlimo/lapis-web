@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { AuthService } from 'app/providers/auth.service';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NotificationService } from 'app/providers/notification.service';
+import { AuthService } from 'app/providers/auth.service';
 
 @Component({
-  selector: 'app-add-event',
-  templateUrl: './add-event.component.html',
-  styleUrls: ['./add-event.component.css']
+  selector: 'app-add-resource',
+  templateUrl: './add-resource.component.html',
+  styleUrls: ['./add-resource.component.css']
 })
-export class AddEventComponent implements OnInit {
-  eventForm: FormGroup;
+export class AddResourceComponent implements OnInit {
+  resourceForm: FormGroup;
   photo: string;
   constructor(
     public activeModal: NgbActiveModal,
@@ -21,18 +21,19 @@ export class AddEventComponent implements OnInit {
     private _authService: AuthService) { }
 
   ngOnInit(): void {
-    this.eventForm = this._fb.group({
+    this.resourceForm = this._fb.group({
       title: ['', [Validators.required ]],
-      banner: ['', [Validators.required ]],
+      image: ['', [Validators.required ]],
       description: ['', [Validators.required ]],
-      details: ['', [Validators.required ]],
-      event_date: ['', [Validators.required]]
+      summary:['', [Validators.required ]],
+      year: ['', [Validators.required]],
+      author: ['', [Validators.required]],
     })
   }
 
   create() {
-    let data = this.eventForm.value;
-    console.log(data);
+   let data = this.resourceForm.value;
+   console.log(data);
    const myFormData = new FormData();
    const  httpOptions  = {
        headers: new HttpHeaders({
@@ -41,12 +42,13 @@ export class AddEventComponent implements OnInit {
         })
        }
    // Section to append basic product detail
-   myFormData.append('banner', data.banner);
+   myFormData.append('summary', data.summary);
    myFormData.append('title', data.title);
    myFormData.append('description', data.description) ;
-   myFormData.append('details', data.details);
-   myFormData.append('event_date', data.event_date);
-   this.http.post('https://lapisapi.herokuapp.com/api/event', myFormData , httpOptions )
+   myFormData.append('year', data.year);
+   myFormData.append('image', data.image);
+   myFormData.append('author', data.author);
+   this.http.post('https://lapisapi.herokuapp.com/api/book', myFormData , httpOptions )
        .subscribe((data: any) => {
          this.notifyService.showSuccess(data['data'].message, 'Success Message')
          console.log(data);
@@ -54,7 +56,6 @@ export class AddEventComponent implements OnInit {
          setTimeout(() => {
           window.location.reload();
         }, 1000)
-        
        },
        err => {
         console.log(err);
@@ -66,7 +67,7 @@ export class AddEventComponent implements OnInit {
      if (event.target.files.length > 0) {
        const file = event.target.files[0];
  
-       this.eventForm.get('banner').setValue(file);
+       this.resourceForm.get('image').setValue(file);
  
        reader.readAsDataURL(file);
  
@@ -74,11 +75,12 @@ export class AddEventComponent implements OnInit {
  
          this.photo = reader.result as string;
  
-         this.eventForm.patchValue({
+         this.resourceForm.patchValue({
            fileSource: reader.result
          });
  
        };
      }
    }
+
 }

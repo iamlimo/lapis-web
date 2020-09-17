@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from 'app/providers/event.service';
 
 @Component({
   selector: 'app-user',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  users: any;
 
-  constructor() { }
+  constructor(private _userService: EventService) { }
 
   ngOnInit(): void {
+    this.getUsers();
   }
-
+  getUsers() {
+    this._userService.getAllusers().subscribe((data: any) => {
+      this.users = data['data'];
+      console.log(this.users);
+    })
+  }
 }

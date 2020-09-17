@@ -13,16 +13,27 @@ import { UserComponent } from './users/user/user.component';
 import { MessageComponent } from './message/message/message.component';
 import { ResourceComponent } from './resources/resource/resource.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TeachingComponent } from './teachings/teaching/teaching.component';
+import { AddTeachingComponent } from './teachings/add-teaching/add-teaching.component';
+import { AddResourceComponent } from './resources/resource/add-resource/add-resource.component';
+import { ViewResourceComponent } from './resources/resource/view-resource/view-resource.component';
+import { SubnavComponent } from './components/subnav/subnav.component';
 
 
 @NgModule({
   declarations: [DashboardComponent, 
-    AddEventComponent, EventDetailComponent, EventListComponent, PrayersComponent, TestimoniesComponent, LoginComponent, UserComponent, MessageComponent, ResourceComponent],
+    AddEventComponent, EventDetailComponent,
+     EventListComponent, PrayersComponent, 
+     TestimoniesComponent, LoginComponent, 
+     UserComponent, MessageComponent,
+      ResourceComponent, TeachingComponent,
+       AddTeachingComponent, AddResourceComponent, ViewResourceComponent, SubnavComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     AdminRoutingModule
-  ]
+  ],
+  entryComponents: [ViewResourceComponent]
 })
 export class AdminModule { }
