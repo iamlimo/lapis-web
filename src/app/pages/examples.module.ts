@@ -15,6 +15,8 @@ import { EventComponent } from './event/event.component';
 import { TestimoniesComponent } from './testimonies/testimonies.component';
 import { SermonComponent } from './sermon/sermon.component';
 import { LoginComponent } from './login/login.component';
+import { TeachingComponent } from './teaching/teaching.component';
+import { TestimonyComponent } from './testimony/testimony.component';
 
 @NgModule({
     imports: [
@@ -35,7 +37,9 @@ import { LoginComponent } from './login/login.component';
         EventComponent,
         TestimoniesComponent,
         SermonComponent,
-        LoginComponent
+        LoginComponent,
+        TeachingComponent,
+        TestimonyComponent
     ]
 })
 export class ExamplesModule { }
