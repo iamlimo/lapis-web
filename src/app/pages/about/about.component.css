@@ -9,12 +9,12 @@
 #about-us{ 
     padding-top: 10em;
     /* margin-top: 70px; */
-    background: url(assets/img/about.jpg);
+    background: url(assets/img/about.png);
     background-repeat: no-repeat; 
     background-size: cover;  
     background-position: center;  
     /* filter: grayscale(100%); */
-    height: 700px;
+    height: 600px;
     background-attachment: fixed;
 }
 
