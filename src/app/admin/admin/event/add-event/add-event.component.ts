@@ -32,7 +32,7 @@ export class AddEventComponent implements OnInit {
 
   create() {
     let data = this.eventForm.value;
-    console.log(data);
+
    const myFormData = new FormData();
    const  httpOptions  = {
        headers: new HttpHeaders({
@@ -49,12 +49,10 @@ export class AddEventComponent implements OnInit {
    this.http.post('https://lapisapi.herokuapp.com/api/event', myFormData , httpOptions )
        .subscribe((data: any) => {
          this.notifyService.showSuccess(data['data'].message, 'Success Message')
-         console.log(data);
          this.activeModal.dismiss();
          setTimeout(() => {
           window.location.reload();
         }, 1000)
-        
        },
        err => {
         console.log(err);
