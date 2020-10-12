@@ -21,6 +21,10 @@ export class LandingComponent implements OnInit {
   }
   ngOnInit() {}
   
- 
+ scrollMe(){
+   
+   var elem = document.getElementById("welcome"); 
+    elem.scrollIntoView(); 
+ }
 
 }

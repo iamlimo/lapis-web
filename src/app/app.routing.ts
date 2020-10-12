@@ -21,6 +21,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NgbdModalComponent } from './components/modal/modal.component';
 import { TeachingComponent } from './pages/teaching/teaching.component';
+import {TrusteesComponent} from './pages/trustees/trustees.component'
 
 const routes: Routes =[
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -38,6 +39,7 @@ const routes: Routes =[
     { path: 'teachings',      component: TeachingComponent },
     { path: 'sermon',      component: SermonComponent },
     {path: 'modal', component: NgbdModalComponent },
+    {path: 'trustees', component:TrusteesComponent},
     {
       path: 'admin',
       canActivate: [AuthGuard],
