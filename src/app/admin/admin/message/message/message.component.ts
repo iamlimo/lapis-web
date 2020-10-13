@@ -11,7 +11,7 @@ export class MessageComponent implements OnInit {
 
   ngOnInit(): void {
     this._contactService.getContact().subscribe((data:any)=>{
-      this.contacts = data['message'];
+      this.contacts = data['data'];
    })
   }
 
