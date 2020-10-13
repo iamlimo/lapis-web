@@ -89,5 +89,14 @@ export class EventService {
       })
     });
   }
+  deleteEvent(id: any) {
+    return this._http.get(`${url}/delete/event/${id}`, {
+      observe: 'body',    
+      headers:  new HttpHeaders({
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this._authService.getToken()
+      })
+    })
+  }
 
 }

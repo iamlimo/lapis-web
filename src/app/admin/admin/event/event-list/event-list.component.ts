@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddEventComponent } from '../add-event/add-event.component';
 import { EventService } from 'app/providers/event.service';
+import { NotificationService } from 'app/providers/notification.service';
 
 @Component({
   selector: 'app-event-list',
@@ -13,7 +14,7 @@ export class EventListComponent implements OnInit {
   eventId: any;
   eventInfo: any;
 
-  constructor(private modalService: NgbModal, private eventService: EventService) { }
+  constructor(private modalService: NgbModal, private notificationService: NotificationService, private eventService: EventService) { }
 
   ngOnInit(): void {
     this.getEvents();
@@ -30,7 +31,14 @@ view(data: any) {
 getEvents() {
   this.eventService.getAllevents().subscribe((data: any) => {
     this.events = data['data'];
-    console.log(this.events);
+  })
+}
+delete(id) {
+  this.eventService.deleteEvent(id).subscribe((data: any) => {
+    this.notificationService.showSuccess(data['data'].message, 'Success Message');
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000)
   })
 }
 }

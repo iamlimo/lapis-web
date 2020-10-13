@@ -24,7 +24,8 @@
                             <h5 class="card-titles">{{item?.title}}</h5>
                             
                             <p class="card-text-hide">{{item?.description}}</p>
-                            <button class="btn btn btn-outline-danger btn-round card-button" (click)="view(item)">view</button>   
+                            <button class="btn btn btn-outline-danger btn-round card-button" (click)="view(item)">view</button> 
+                            <button class="btn btn btn-outline-danger btn-round card-button" (click)="delete(item?.id)">Delete</button>     
                             </div>
                         </div>
                     </div>
