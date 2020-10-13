@@ -17,3 +17,11 @@ export interface teachingsModel {
     title: string;
     link: string;
 }
+
+export interface contactModel {
+    firstname: string;
+    lastname: string;
+    phone: number;
+    email: string;
+    message: string;
+}

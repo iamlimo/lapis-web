@@ -98,5 +98,31 @@ export class EventService {
       })
     })
   }
-
+contact(body: any) {
+    return this._http.post(`${url}/contact`,body, {
+      observe: 'body',    
+      headers:  new HttpHeaders({
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this._authService.getToken()
+      })
+    })
+  }
+  getContact() {
+    return this._http.get(`${url}/contact`, {
+      observe: 'body',    
+      headers:  new HttpHeaders({
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this._authService.getToken()
+      })
+    })
+  }
+  deleteContact(id: any) {
+    return this._http.get(`${url}/delete/contact/${id}`, {
+      observe: 'body',    
+      headers:  new HttpHeaders({
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this._authService.getToken()
+      })
+    })
+  }
 }
