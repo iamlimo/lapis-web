@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { EventService } from 'app/providers/event.service';
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
-  constructor(private _contactService:) { }
+  constructor(private _contactService:EventService) { }
 
   ngOnInit(): void {
-    
+    this._contactService.getContact().subscribe((data:any)=>{
+      this.contacts = data['message'];
+   })
   }
 
 }
