@@ -14,5 +14,9 @@ export class MessageComponent implements OnInit {
       this.contacts = data['data'];
    })
   }
-
+  delete (id:any) {
+    this._contactService.deleteContact(id).subscribe(data){
+      console.log(data);
+   }
+  }
 }
