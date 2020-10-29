@@ -80,7 +80,7 @@ export class EventService {
       })
     });
   }
-  getBookById(slug: any) {
+ getBookById(slug: any) {
     return this._http.get(`${url}/book/${slug}`,  {
       observe: 'body',    
       headers:  new HttpHeaders({
@@ -88,8 +88,8 @@ export class EventService {
         'Authorization': 'Bearer ' + this._authService.getToken()
       })
     });
-  }
-  deleteEvent(id: any) {
+ }
+ deleteEvent(id: any) {
     return this._http.get(`${url}/delete/event/${id}`, {
       observe: 'body',    
       headers:  new HttpHeaders({
@@ -97,14 +97,14 @@ export class EventService {
         'Authorization': 'Bearer ' + this._authService.getToken()
       })
     })
-  }
-contact(body: any) {
+ }
+ contact(body: any) {
     return this._http.post(`${url}/contact`,body, {
       observe: 'body',    
-      headers:  new HttpHeaders({
-        'Accept': 'application/json',
-        'Authorization': 'Bearer ' + this._authService.getToken()
-      })
+        headers:  new HttpHeaders({
+          'Accept': 'application/json',
+          'Authorization': 'Bearer ' + this._authService.getToken()
+        })
     })
   }
   getContact() {
