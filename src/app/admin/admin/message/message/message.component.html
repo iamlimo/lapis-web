@@ -5,3 +5,17 @@
 </div>
 <br>
 <subnav></subnav>
+
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+      <h6 class="border-bottom border-gray pb-2 mb-0">Teachings List</h6>
+      <div class="media text-muted pt-3" *ngFor="let item of contacts">
+        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+          <strong class="d-block text-gray-dark">{{item?.firstname}}{{item?.last name}}</strong>
+        </p>
+         <small>{{item?.email}}</small>
+        <p>{{item?. message}}</p>
+      </div>
+      <small class="d-block text-right mt-3">
+        <a href="#" (click)="delete(item?.id)">Delete Message</a>
+      </small>
+    </div>
