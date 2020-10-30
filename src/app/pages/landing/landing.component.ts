@@ -27,7 +27,9 @@ export class LandingComponent implements OnInit {
       console.log(this.events);
     })
   }
-  
+  attend() {
+   
+  }
  scrollMe(){
    
    var elem = document.getElementById("welcome"); 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'app/providers/event.service';
+import { NotificationService } from 'app/providers/notification.service';
 
 @Component({
   selector: 'app-event',
@@ -9,7 +10,7 @@ import { EventService } from 'app/providers/event.service';
 export class EventComponent implements OnInit {
   events: any;
 
-  constructor(private _eventService: EventService) { }
+  constructor(private _eventService: EventService, private notification: NotificationService) { }
 
   ngOnInit(): void {
     this._eventService.getAllevents().subscribe(data => {
@@ -17,5 +18,7 @@ export class EventComponent implements OnInit {
       console.log(this.events);
     })
   }
-
+ attend() {
+   
+ }
 }
