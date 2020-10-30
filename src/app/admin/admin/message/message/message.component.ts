@@ -6,6 +6,7 @@ import { EventService } from 'app/providers/event.service';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
+  contacts: any;
 
   constructor(private _contactService:EventService) { }
 
@@ -15,8 +16,8 @@ export class MessageComponent implements OnInit {
    })
   }
   delete (id:any) {
-    this._contactService.deleteContact(id).subscribe(data){
+    this._contactService.deleteContact(id).subscribe((data)=>{
       console.log(data);
-   }
+   })
   }
 }

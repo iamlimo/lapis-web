@@ -35,7 +35,7 @@ getEvents() {
 }
 delete(id) {
   this.eventService.deleteEvent(id).subscribe((data: any) => {
-    this.notificationService.showSuccess(data['data'].message, 'Success Message');
+    this.notificationService.showSuccess(data['message'], 'Success Message');
     setTimeout(() => {
       window.location.reload();
     }, 1000)
