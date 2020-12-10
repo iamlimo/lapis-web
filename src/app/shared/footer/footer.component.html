@@ -1,51 +1,58 @@
 <footer class="footer">
-    <div class="container-fluid" style="background-color: #343538; padding-top: 40px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <h5>MORE ABOUT US</h5>
-                    <ul>
-                        <li>What we are about</li>
-                        <li>Vision, Missions and Aims</li>
-                        <li>Founders</li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>LAPIS LAZULI MINISTRIES</h5>
-                    <ul>
-                        <li> <a href="https://lapislmradio.org/">   Lapis LM Radio</a></li>
-                        <li><a href=""> eNewsletter</a></li>
-                        <li><a href="">Teachings</a></li>
-                       <li> <a routerLink="/founders">Founders</a> </li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>RESOURCES</h5>
-                    <ul style="text-decoration-style: none;">
-                        <li>eNewsletter</li>
-                        <li>Blog</li>
-                        <li><a routerLink="/contact"> Contact Us</a></li>
-                    </ul>
-                </div>
-               
-                <div class="col-md-3">
-                    <h5>Subscribe to our newsletter.</h5>
-                    <input type="text" name="" id="" placeholder="example@gmail.com" class="form-control">
-                    <button class="btn btn-round">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div
+    class="container-fluid"
+    style="background-color: #343538; padding-top: 40px"
+  >
     <div class="container">
-
-        <div class="row">
-            <div class="col-md-12">
-                <p class="text-center">
-                    © {{test | date: 'yyyy'}} <i class="fa fa-heart heart"></i>
-                    <small> <b> LAPIS LAZULI MINISTRIES </b></small>
-                </p>
-            </div>
-            
+      <div class="row">
+        <div class="col-md-3">
+          <h5>MORE ABOUT US</h5>
+          <ul>
+            <li><a routerLink="/founders">Founders</a></li>
+            <li>Vision, Missions and Aims</li>
+            <li><a routerLink="/founders">Founders</a></li>
+            <li><a routerLink="/donate">Donate</a></li>
+          </ul>
         </div>
+        <div class="col-md-3">
+          <h5>LAPIS LAZULI MINISTRIES</h5>
+          <ul>
+            <li><a href="https://lapislmradio.org/"> Lapis LM Radio</a></li>
+            <li><a href=""> eNewsletter</a></li>
+            <li><a href="">Teachings</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>RESOURCES</h5>
+          <ul style="text-decoration-style: none">
+            <li>eNewsletter</li>
+            <li>Blog</li>
+            <li><a routerLink="/contact"> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5>Subscribe to our newsletter.</h5>
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="example@gmail.com"
+            class="form-control"
+          />
+          <button class="btn btn-round">Subscribe</button>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-center">
+          © {{ test | date: "yyyy" }} <i class="fa fa-heart heart"></i>
+          <small> <b> LAPIS LAZULI MINISTRIES </b></small>
+        </p>
+      </div>
+    </div>
+  </div>
 </footer>
