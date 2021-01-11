@@ -10,7 +10,7 @@ import { teachingsModel } from 'app/models/model';
   styleUrls: ['./add-teaching.component.css']
 })
 export class AddTeachingComponent implements OnInit {
-
+  focus;
   teachingForm: FormGroup;
   photo: string;
   errMessage: any;

@@ -11,7 +11,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  focus;
+  focus1;
   loginForm: FormGroup = this.formBuilder.group({
     email: new FormControl('', Validators.compose([
       Validators.required,

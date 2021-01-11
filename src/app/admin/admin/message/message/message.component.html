@@ -13,9 +13,10 @@
           <strong class="d-block text-gray-dark">{{item?.firstname}}{{item?.lastname}}</strong>
         </p>
          <small>{{item?.email}}</small>
-        <p>{{item?. message}}</p>
+        <p>{{item?.message}}</p>
+        <small class="d-block text-right mt-3">
+          <a href="#" (click)="delete(item?.id)">Delete Message</a>
+        </small>
       </div>
-      <small class="d-block text-right mt-3">
-        <a href="#" (click)="delete(item?.id)">Delete Message</a>
-      </small>
+      
     </div>

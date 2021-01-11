@@ -13,6 +13,7 @@ import { AuthService } from 'app/providers/auth.service';
 export class AddResourceComponent implements OnInit {
   resourceForm: FormGroup;
   photo: string;
+  focus;
   constructor(
     public activeModal: NgbActiveModal,
     private http: HttpClient,

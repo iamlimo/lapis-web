@@ -11,6 +11,7 @@ import { NotificationService } from 'app/providers/notification.service';
   styleUrls: ['./add-event.component.css']
 })
 export class AddEventComponent implements OnInit {
+  focus;
   eventForm: FormGroup;
   photo: string;
   constructor(
