@@ -21,13 +21,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { EventService } from './providers/event.service';
 import { NotificationService } from './providers/notification.service';
 import { ToastrModule } from 'ngx-toastr';
+
+import { LocationStrategy, PathLocationStrategy } from "@angular/common";
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,11 +42,15 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     AppRoutingModule,
     NgxSpinnerModule,
-    ToastrModule.forRoot()
-
+    ToastrModule.forRoot(),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [AuthService, EventService, NotificationService],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthService,
+    EventService,
+    NotificationService,
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
