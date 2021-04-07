@@ -10,3 +10,15 @@
     background: #3952A4 !important;
     border-color: #3952A4;
 }
+
+
+
+@media screen and (max-width: 580px) {
+    .dropdown.show .dropdown-menu, .dropdown .dropdown-menu {
+      background-color: #3952A4 !important;
+      color: #fff !important;
+  }
+  .dropdown .dropdown-menu .dropdown-item{
+      color: #fff !important;
+  }
+}
